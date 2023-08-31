@@ -1,5 +1,5 @@
 {
-  "name": "platformInfo",
+  "name": "platforminfo",
   "version": "0.1.0",
   "description": "查询平台信息",
   "main": "index.js",
