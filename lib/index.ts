@@ -1,11 +1,15 @@
 (function (root, factory) {
+  // @ts-ignore
   if (typeof exports === 'object' && typeof module === 'object') {
+    // @ts-ignore
     module.exports = factory();
     // @ts-ignore
   } else if (typeof define === 'function' && define.amd) {
     // @ts-ignore
     define([], factory);
+    // @ts-ignore
   } else if (typeof exports === 'object') {
+    // @ts-ignore
     exports['platform'] = factory;
   } else {
     // @ts-ignore
