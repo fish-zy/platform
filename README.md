@@ -1,4 +1,4 @@
-# Platform.ts v0.1.3
+# Platform.ts v0.1.5
 
   获取相关平台信息
   get relevant platform information
