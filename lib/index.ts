@@ -1,33 +1,22 @@
-(function (root, factory) {
-  // @ts-ignore
-  if (typeof exports === 'object' && typeof module === 'object') {
-    // @ts-ignore
-    module.exports = factory();
-    // @ts-ignore
-  } else if (typeof define === 'function' && define.amd) {
-    // @ts-ignore
-    define([], factory);
-    // @ts-ignore
-  } else if (typeof exports === 'object') {
-    // @ts-ignore
-    exports['platform'] = factory;
-  } else {
-    // @ts-ignore
-    root['platform'] = factory();
-  }
+export enum nameEnum {
+  DingTalk = 'DingTalk',
+  Feishu = 'Feishu',
+  App = 'App',
+  Wxwork = 'Wxwork',
+  WeChat = 'WeChat',
+  MiniProgram = 'MiniProgram'
+}
 
-})(this, function () {
+interface InfoResult {
+  ua: string
+  name: nameEnum | undefined
+  isH5: boolean
+}
+
+function platforminfo(): InfoResult {
   const ua = navigator.userAgent;
-  enum nameEnum {
-    DingTalk = 'DingTalk',
-    Feishu = 'Feishu',
-    App = 'App',
-    Wxwork = 'Wxwork',
-    WeChat = 'WeChat',
-    MiniProgram = 'MiniProgram'
-  }
-  let name = '';
-  const isH5 = ua.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+  let name;
+  const isH5 = !!ua.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
   if (ua.indexOf('DingTalk') > -1) { // 钉钉
     name = nameEnum.DingTalk;
   } else if (ua.match(/Feishu/)) { // 飞书
@@ -43,8 +32,9 @@
   }
   return {
     ua,
-    name,
     isH5,
-    nameEnum
+    name,
   }
-})
+}
+
+export default platforminfo;

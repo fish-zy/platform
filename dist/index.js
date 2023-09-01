@@ -1,37 +1,19 @@
 "use strict";
-(function (root, factory) {
-    // @ts-ignore
-    if (typeof exports === 'object' && typeof module === 'object') {
-        // @ts-ignore
-        module.exports = factory();
-        // @ts-ignore
-    }
-    else if (typeof define === 'function' && define.amd) {
-        // @ts-ignore
-        define([], factory);
-        // @ts-ignore
-    }
-    else if (typeof exports === 'object') {
-        // @ts-ignore
-        exports['platform'] = factory;
-    }
-    else {
-        // @ts-ignore
-        root['platform'] = factory();
-    }
-})(this, function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.nameEnum = void 0;
+var nameEnum;
+(function (nameEnum) {
+    nameEnum["DingTalk"] = "DingTalk";
+    nameEnum["Feishu"] = "Feishu";
+    nameEnum["App"] = "App";
+    nameEnum["Wxwork"] = "Wxwork";
+    nameEnum["WeChat"] = "WeChat";
+    nameEnum["MiniProgram"] = "MiniProgram";
+})(nameEnum || (exports.nameEnum = nameEnum = {}));
+function platforminfo() {
     var ua = navigator.userAgent;
-    var nameEnum;
-    (function (nameEnum) {
-        nameEnum["DingTalk"] = "DingTalk";
-        nameEnum["Feishu"] = "Feishu";
-        nameEnum["App"] = "App";
-        nameEnum["Wxwork"] = "Wxwork";
-        nameEnum["WeChat"] = "WeChat";
-        nameEnum["MiniProgram"] = "MiniProgram";
-    })(nameEnum || (nameEnum = {}));
-    var name = '';
-    var isH5 = ua.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+    var name;
+    var isH5 = !!ua.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
     if (ua.indexOf('DingTalk') > -1) { // 钉钉
         name = nameEnum.DingTalk;
     }
@@ -52,8 +34,8 @@
     }
     return {
         ua: ua,
-        name: name,
         isH5: isH5,
-        nameEnum: nameEnum
+        name: name,
     };
-});
+}
+exports.default = platforminfo;
