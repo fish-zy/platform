@@ -2,7 +2,7 @@
   "name": "platforminfo",
   "version": "0.1.2",
   "description": "查询平台信息",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "style:lint": "tslint -p tsconfig.json -c tslint.json"
