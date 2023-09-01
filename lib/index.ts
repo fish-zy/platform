@@ -13,7 +13,7 @@ interface InfoResult {
   isH5: boolean
 }
 
-function platforminfo(): InfoResult {
+function Platforminfo(): InfoResult {
   const ua = navigator.userAgent;
   let name;
   const isH5 = !!ua.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
@@ -36,5 +36,7 @@ function platforminfo(): InfoResult {
     name,
   }
 }
+
+export const platforminfo: InfoResult = Platforminfo();
 
 export default platforminfo;

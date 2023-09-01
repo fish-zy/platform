@@ -11,5 +11,5 @@ interface InfoResult {
     name: nameEnum | undefined;
     isH5: boolean;
 }
-declare function platforminfo(): InfoResult;
+export declare const platforminfo: InfoResult;
 export default platforminfo;

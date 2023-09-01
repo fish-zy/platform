@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.nameEnum = void 0;
+exports.platforminfo = exports.nameEnum = void 0;
 var nameEnum;
 (function (nameEnum) {
     nameEnum["DingTalk"] = "DingTalk";
@@ -10,7 +10,7 @@ var nameEnum;
     nameEnum["WeChat"] = "WeChat";
     nameEnum["MiniProgram"] = "MiniProgram";
 })(nameEnum || (exports.nameEnum = nameEnum = {}));
-function platforminfo() {
+function Platforminfo() {
     var ua = navigator.userAgent;
     var name;
     var isH5 = !!ua.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
@@ -38,4 +38,5 @@ function platforminfo() {
         name: name,
     };
 }
-exports.default = platforminfo;
+exports.platforminfo = Platforminfo();
+exports.default = exports.platforminfo;
