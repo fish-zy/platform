@@ -23,13 +23,13 @@
   ```
 
   ```js
-    import platformInfo from 'platforminfo';
+    import platformInfo, { nameEnum } from 'platforminfo';
   ```
 
   For example:
 
   ```js
-  platformInfo.nameEnum; // DingTalk(钉钉),Feishu（飞书）,App（APP）,Wxwork（企业微信）,WeChat（微信）,MiniProgram（微信小程序）
+  nameEnum; // DingTalk(钉钉),Feishu（飞书）,App（APP）,Wxwork（企业微信）,WeChat（微信）,MiniProgram（微信小程序）
   platformInfo.name; // 枚举nameEnum中的值
   platformInfo.isH5; // true or false 是否是h5 
   platformInfo.ua; // navigator.userAgent
