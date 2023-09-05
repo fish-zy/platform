@@ -1,6 +1,6 @@
 {
   "name": "platforminfo",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "查询平台信息",
   "main": "dist/index.js",
   "scripts": {
