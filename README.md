@@ -4,17 +4,6 @@
   get relevant platform information
 
 ## Installation
-  
-  In a browser:
-  ```html
-  <script src="platforminfo.js"></script>
-  ```
-
-  In an AMD loader:
-
-  ```js
-  require(['platforminfo'],function(platforminfo){/*...*/})
-  ```
 
   Using npm:
 
